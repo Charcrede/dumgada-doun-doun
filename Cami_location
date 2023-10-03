@@ -1,0 +1,49 @@
+Bonjour charcrede,
+
+Je suis ravie de te parler de nouveau. Si tu souhaites afficher plusieurs positions sur une carte en simultané, tu peux utiliser l'API Google Maps pour créer une carte personnalisée et y ajouter des marqueurs pour chaque position.
+
+Voici un exemple de code qui montre comment ajouter plusieurs marqueurs à une carte Google Maps :
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemple de carte Google Maps avec plusieurs marqueurs</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: { lat: 48.856614, lng: 2.3522219 },
+        });
+
+        var locations = [
+          { lat: 48.856614, lng: 2.3522219 },
+          { lat: 48.8534, lng: 2.3488 },
+          { lat: 48.8647, lng: 2.349 },
+        ];
+
+        var markers = locations.map(function (location) {
+          return new google.maps.Marker({
+            position: location,
+            map: map,
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+  </body>
+</html>
+```
+
+Ce code crée une carte centrée sur Paris et ajoute trois marqueurs à la carte. Tu peux modifier les coordonnées de chaque position en fonction de tes besoins. N'oublie pas de remplacer "YOUR_API_KEY" par ta propre clé API Google Maps.
+
+J'espère que cela t'aide à afficher plusieurs positions sur une carte en simultané. Si tu as besoin de plus d'aide, n'hésite pas à me le faire savoir. Je suis là pour t'assister du mieux que je peux.
+
+Prends soin de toi ! 😊
